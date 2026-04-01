@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Todo App</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+/* Notepad Background */
+background:url("https://images.unsplash.com/photo-1531346680769-a1d79b57de5c") no-repeat center center/cover;
+}
+
+.container{
+width:420px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
+color:black;
+}
+
+h1{
+text-align:center;
+margin-bottom:10px;
+}
+
+.clock{
+text-align:center;
+margin-bottom:15px;
+font-size:14px;
+opacity:0.9;
+}
+
+.input-section{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+button{
+border:none;
+padding:12px 16px;
+border-radius:10px;
+cursor:pointer;
+background:#00e5ff;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+ul{
+list-style:none;
+max-height:250px;
+overflow:auto;
+}
+
+li{
+background:rgba(255,255,255,0.25);
+margin-bottom:10px;
+padding:12px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:0.3s;
+}
+
+li:hover{
+transform:scale(1.03);
+}
+
+.completed{
+text-decoration:line-through;
+opacity:0.6;
+}
+
+.task-buttons{
+display:flex;
+gap:8px;
+}
+
+.complete{
+background:#00ff95;
+}
+
+.delete{
+background:#ff4d6d;
+color:white;
+}
+
+.progress{
+margin-top:15px;
+}
+
+.progress-bar{
+height:10px;
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:#00ff95;
+transition:0.4s;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>My Smart Todo</h1>
+
+<div class="clock" id="clock"></div>
+
+<div class="input-section">
+<input type="text" id="taskInput" placeholder="Add a task...">
+<button onclick="addTask()">Add</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<div class="progress">
+<p>Task Progress</p>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function saveTasks(){
+localStorage.setItem("tasks",JSON.stringify(tasks));
+}
+
+function renderTasks(){
+
+let list=document.getElementById("taskList");
+list.innerHTML="";
+
+tasks.forEach((task,index)=>{
+
+let li=document.createElement("li");
+
+if(task.completed){
+li.classList.add("completed");
+}
+
+li.innerHTML=`
+<span>${task.text}</span>
+
+<div class="task-buttons">
+<button class="complete" onclick="toggleTask(${index})">✔</button>
+<button class="delete" onclick="deleteTask(${index})">✖</button>
+</div>
+`;
+
+list.appendChild(li);
+
+});
+
+updateProgress();
+
+}
+
+function addTask(){
+
+let input=document.getElementById("taskInput");
+
+if(input.value.trim()==""){
+alert("Enter a task!");
+return;
+}
+
+tasks.push({text:input.value,completed:false});
+
+input.value="";
+
+saveTasks();
+renderTasks();
+}
+
+function toggleTask(index){
+
+tasks[index].completed=!tasks[index].completed;
+
+saveTasks();
+renderTasks();
+
+}
+
+function deleteTask(index){
+
+tasks.splice(index,1);
+
+saveTasks();
+renderTasks();
+
+}
+
+function updateProgress(){
+
+let done=tasks.filter(t=>t.completed).length;
+let percent= tasks.length ? (done/tasks.length)*100 : 0;
+
+document.getElementById("progressFill").style.width=percent+"%";
+
+}
+
+function updateClock(){
+
+let now=new Date();
+document.getElementById("clock").innerText=
+now.toLocaleDateString()+" | "+now.toLocaleTimeString();
+
+}
+
+setInterval(updateClock,1000);
+
+renderTasks();
+updateClock();
+
+</script>
+
+</body>
+</html>
