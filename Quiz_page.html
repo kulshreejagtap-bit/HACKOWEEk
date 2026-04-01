@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5-Question MCQ Quiz</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 24px;
+      color: #0f172a;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .student-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0 20px;
+      padding: 16px;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .field input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .question {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      background: #fff;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .question:hover {
+      border-color: #c7d2fe;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+    }
+
+    .question p {
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background .12s ease, border-color .12s ease;
+    }
+
+    .option:hover {
+      background: #f3f6ff;
+      border-color: #e0e7ff;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid transparent;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #f1f5f9;
+    }
+
+    .submit-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .reset-btn {
+      background: #fff;
+      border-color: var(--border);
+    }
+
+    #result {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .correct { border-color: rgba(22,163,74,.5) !important; background: rgba(22,163,74,.05); }
+    .wrong   { border-color: rgba(220,38,38,.5) !important; background: rgba(220,38,38,.05); }
+
+    .error {
+      margin-top: 10px;
+      color: var(--danger);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .student-info { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1>5-Question MCQ Quiz</h1>
+        <div class="subtitle">Answer all questions and submit to see your score</div>
+      </div>
+    </header>
+
+    <div class="student-info">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name" />
+      </div>
+      <div class="field">
+        <label for="roll">PRN</label>
+        <input type="text" id="roll" placeholder="Your PRN" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+      </div>
+    </div>
+
+    <form id="quizForm">
+
+      <div class="question" id="q1">
+        <p>1. What does HTML stand for?</p>
+        <label class="option"><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+        <label class="option"><input type="radio" name="q1" value="b"> Home Tool Markup Language</label>
+        <label class="option"><input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language</label>
+        <label class="option"><input type="radio" name="q1" value="d"> High Text Machine Language</label>
+      </div>
+
+      <div class="question" id="q2">
+        <p>2. Which tag is used for a line break in HTML?</p>
+        <label class="option"><input type="radio" name="q2" value="a"> &lt;lb&gt;</label>
+        <label class="option"><input type="radio" name="q2" value="b"> &lt;br&gt;</label>
+        <label class="option"><input type="radio" name="q2" value="c"> &lt;break&gt;</label>
+        <label class="option"><input type="radio" name="q2" value="d"> &lt;line&gt;</label>
+      </div>
+
+      <div class="question" id="q3">
+        <p>3. Which language is used for styling web pages?</p>
+        <label class="option"><input type="radio" name="q3" value="a"> HTML</label>
+        <label class="option"><input type="radio" name="q3" value="b"> CSS</label>
+        <label class="option"><input type="radio" name="q3" value="c"> Python</label>
+        <label class="option"><input type="radio" name="q3" value="d"> Java</label>
+      </div>
+
+      <div class="question" id="q4">
+        <p>4. Which is used to add interactivity to a webpage?</p>
+        <label class="option"><input type="radio" name="q4" value="a"> HTML</label>
+        <label class="option"><input type="radio" name="q4" value="b"> CSS</label>
+        <label class="option"><input type="radio" name="q4" value="c"> JavaScript</label>
+        <label class="option"><input type="radio" name="q4" value="d"> SQL</label>
+      </div>
+
+      <div class="question" id="q5">
+        <p>5. Which HTML tag is used to create a button?</p>
+        <label class="option"><input type="radio" name="q5" value="a"> &lt;input&gt;</label>
+        <label class="option"><input type="radio" name="q5" value="b"> &lt;button&gt;</label>
+        <label class="option"><input type="radio" name="q5" value="c"> &lt;click&gt;</label>
+        <label class="option"><input type="radio" name="q5" value="d"> &lt;btn&gt;</label>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="submit-btn" onclick="checkAnswers()">Submit Quiz</button>
+        <button type="reset" class="reset-btn" onclick="resetQuiz()">Reset</button>
+      </div>
+
+      <div id="result"></div>
+      <div id="error" class="error"></div>
+    </form>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const name = document.getElementById("name").value.trim();
+      const roll = document.getElementById("roll").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const errorDiv = document.getElementById("error");
+
+      if (!name || !roll || !email) {
+        errorDiv.innerText = "Please fill Name, PRN, and Email before submitting.";
+        return;
+      }
+
+      errorDiv.innerText = "";
+
+      const answers = { q1:"a", q2:"b", q3:"b", q4:"c", q5:"b" };
+      let score = 0;
+
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        const questionDiv = document.getElementById(q);
+        questionDiv.classList.remove("correct","wrong");
+
+        if (selected && selected.value === answers[q]) {
+          score++; questionDiv.classList.add("correct");
+        } else {
+          questionDiv.classList.add("wrong");
+        }
+      }
+
+      document.getElementById("result").innerText =
+        `Name: ${name} | PRN: ${roll} | Score: ${score} / 5`;
+    }
+
+    function resetQuiz() {
+      document.getElementById("result").innerText = "";
+      document.getElementById("error").innerText = "";
+      ["name","roll","email"].forEach(id => document.getElementById(id).value = "");
+      document.querySelectorAll(".question").forEach(q => q.classList.remove("correct","wrong"));
+    }
+  </script>
+
+</body>
+</html>
