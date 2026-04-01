@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Atelier</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #f5f5f7, #ffffff);
+    color: #1f2937;
+}
+
+header {
+    padding: 50px 70px 30px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+header p {
+    margin-top: 8px;
+    color: #6b7280;
+    max-width: 420px;
+}
+
+.section {
+    padding: 50px 70px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.section-title span {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    border-radius: 18px;
+    padding: 16px;
+    transition: 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.info {
+    margin-top: 14px;
+}
+
+.info h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.info p {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 4px 0 10px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: 600;
+}
+
+.add {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Luméa</h1>
+    <p>A curated selection of objects for everyday living — minimal, functional, beautiful.</p>
+</header>
+
+<!-- Electronics -->
+<section class="section">
+<div class="section-title">
+    <h2>Electronics</h2>
+    <span>Designed for modern routines</span>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <img src="https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg">
+        <div class="info">
+            <h3>Wireless Headphones</h3>
+            <p>Clean sound, zero distractions</p>
+            <div class="price-row"><div class="price">₹1,999</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg">
+        <div class="info">
+            <h3>Smart Watch</h3>
+            <p>Track what matters</p>
+            <div class="price-row"><div class="price">₹3,299</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2023/08/cover-photoutils.com-3.jpg?ssl=1&quality=80&w=f">
+        <div class="info">
+            <h3>Bluetooth Speaker</h3>
+            <p>Portable, powerful audio</p>
+            <div class="price-row"><div class="price">₹1,499</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61woZvYeQbL.jpg">
+        <div class="info">
+            <h3>Wireless Charger</h3>
+            <p>Fast & cable-free charging</p>
+            <div class="price-row"><div class="price">₹1,399</div><button class="add">Add</button></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Fashion -->
+<section class="section">
+<div class="section-title">
+    <h2>Fashion</h2>
+    <span>Comfort meets intention</span>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71f3BmjCwtL.jpg">
+        <div class="info">
+            <h3>Running Shoes</h3>
+            <p>Lightweight everyday wear</p>
+            <div class="price-row"><div class="price">₹2,499</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://icon.in/cdn/shop/files/1_427a8665-919f-4581-8b61-313c46cae7e7.jpg?v=1735287670">
+        <div class="info">
+            <h3>Travel Backpack</h3>
+            <p>Thoughtful storage</p>
+            <div class="price-row"><div class="price">₹1,899</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg">
+        <div class="info">
+            <h3>Classic Hoodie</h3>
+            <p>Soft fabric, relaxed fit</p>
+            <div class="price-row"><div class="price">₹1,999</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://www.marcus-store.com/cdn/shop/products/3249_7_1657728161.jpg">
+        <div class="info">
+            <h3>Casual Jacket</h3>
+            <p>Minimal everyday layer</p>
+            <div class="price-row"><div class="price">₹2,999</div><button class="add">Add</button></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Accessories -->
+<section class="section">
+<div class="section-title">
+    <h2>Accessories</h2>
+    <span>Small details, big impact</span>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <img src="https://cdn-images.farfetch-contents.com/28/02/01/54/28020154_57525844_600.jpg">
+        <div class="info">
+            <h3>Sunglasses</h3>
+            <p>UV protection lenses</p>
+            <div class="price-row"><div class="price">₹9,999</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://i.pinimg.com/564x/70/e4/9c/70e49c4a2ea8af1f538cd0ea2c505db9.jpg">
+        <div class="info">
+            <h3>Perfume</h3>
+            <p>Soft woody fragrance</p>
+            <div class="price-row"><div class="price">₹16,499</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images-cdn.ubuy.co.in/633aba2608ff2c6275335967-spiral-notebook-4-pcs-a5-thick-plastic.jpg">
+        <div class="info">
+            <h3>Notebook Set</h3>
+            <p>Premium paper finish</p>
+            <div class="price-row"><div class="price">₹499</div><button class="add">Add</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://teakwoodleathers.com/cdn/shop/files/T_WLT_533_BR_1_1080x.jpg?v=1750933434">
+        <div class="info">
+            <h3>Leather Wallet</h3>
+            <p>Slim & functional design</p>
+            <div class="price-row"><div class="price">₹999</div><button class="add">Add</button></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+© 2026 Atelier. Designed with intention.
+</footer>
+
+</body>
+</html>
