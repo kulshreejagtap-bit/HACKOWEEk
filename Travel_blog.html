@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traveler Blog</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Trip Sections */
+.trip {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.trip input {
+  display: none;
+}
+
+.trip label {
+  display: block;
+  background: #00bcd4;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.trip label:hover {
+  background: #0097a7;
+}
+
+/* Collapsible Content */
+.trip-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  transition: max-height 0.4s ease;
+  padding: 0 12px;
+}
+
+.trip input:checked ~ .trip-content {
+  max-height: 500px; /* limits height */
+  padding: 12px;
+  overflow-y: auto; /* make scrollable if content exceeds height */
+}
+
+/* Trip content styling */
+.trip-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.trip-content p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.trip-content ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.trip-content li {
+  margin-bottom: 5px;
+}
+
+.trip-content h3 {
+  margin-top: 10px;
+  color: #00bcd4;
+  margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>My Travel Blog</h1>
+
+<!-- Trip 1: Paris -->
+<div class="trip">
+  <input type="checkbox" id="trip1">
+  <label for="trip1">Trip to Paris</label>
+  <div class="trip-content">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+    
+    <h3>Highlights</h3>
+    <ul>
+      <li>Eiffel Tower at sunrise</li>
+      <li>Louvre Museum – Mona Lisa</li>
+      <li>Notre-Dame Cathedral</li>
+      <li>Montmartre and Sacré-Cœur</li>
+    </ul>
+    
+    <h3>Food</h3>
+    <ul>
+      <li>Fresh croissants and pastries from local bakeries</li>
+      <li>Café au lait at street cafés</li>
+      <li>French fine dining and cheese tasting</li>
+    </ul>
+
+    <h3>Transportation</h3>
+    <ul>
+      <li>Metro for fast travel across city</li>
+      <li>Buses for scenic routes</li>
+      <li>Walking for historical districts</li>
+    </ul>
+
+    <h3>People & Culture</h3>
+    <ul>
+      <li>Friendly locals, some with limited English</li>
+      <li>Rich art and museum culture</li>
+      <li>Street performances in Montmartre</li>
+    </ul>
+
+    <h3>Hotels & Stay</h3>
+    <ul>
+      <li>Charming boutique hotels in the city center</li>
+      <li>Airbnb options near major landmarks</li>
+      <li>Book early for affordable options</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Trip 2: Tokyo -->
+<div class="trip">
+  <input type="checkbox" id="trip2">
+  <label for="trip2">Trip to Tokyo</label>
+  <div class="trip-content">
+    <img src="https://www.advantour.com/img/japan/images/tokyo.jpg" alt="Tokyo">
+
+    <h3>Highlights</h3>
+    <ul>
+      <li>Senso-ji Temple in Asakusa</li>
+      <li>Shibuya Crossing</li>
+      <li>Tsukiji Fish Market sushi tasting</li>
+      <li>Tokyo Tower panoramic view</li>
+    </ul>
+
+    <h3>Food</h3>
+    <ul>
+      <li>Fresh sushi and sashimi at local markets</li>
+      <li>Ramen in small local shops</li>
+      <li>Street food in Harajuku</li>
+    </ul>
+
+    <h3>Transportation</h3>
+    <ul>
+      <li>Efficient metro system with Suica card</li>
+      <li>JR trains for city outskirts</li>
+      <li>Walking for shrines and markets</li>
+    </ul>
+
+    <h3>People & Culture</h3>
+    <ul>
+      <li>Polite and helpful locals</li>
+      <li>Blend of tradition and modern lifestyle</li>
+      <li>Respectful temple etiquette</li>
+    </ul>
+
+    <h3>Hotels & Stay</h3>
+    <ul>
+      <li>Business hotels in Shinjuku and Shibuya</li>
+      <li>Airbnb apartments for local feel</li>
+      <li>Capsule hotels for short stays</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Trip 3: New York -->
+<div class="trip">
+  <input type="checkbox" id="trip3">
+  <label for="trip3">Trip to New York</label>
+  <div class="trip-content">
+    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bd/6f/17.jpg" alt="New York">
+
+    <h3>Highlights</h3>
+    <ul>
+      <li>Statue of Liberty & Ellis Island</li>
+      <li>Central Park bike ride</li>
+      <li>Broadway musical night</li>
+      <li>Times Square at night</li>
+    </ul>
+
+    <h3>Food</h3>
+    <ul>
+      <li>Pizza slices and bagels</li>
+      <li>Diverse cuisines from around the world</li>
+      <li>Food trucks for local treats</li>
+    </ul>
+
+    <h3>Transportation</h3>
+    <ul>
+      <li>Subway for fast travel across boroughs</li>
+      <li>Walking in Manhattan for sightseeing</li>
+      <li>Uber/Lyft for convenience</li>
+    </ul>
+
+    <h3>People & Culture</h3>
+    <ul>
+      <li>Fast-paced and vibrant city life</li>
+      <li>Diverse population with many cultures</li>
+      <li>Friendly interactions if you approach locals politely</li>
+    </ul>
+
+    <h3>Hotels & Stay</h3>
+    <ul>
+      <li>Hotels in Midtown or near Times Square</li>
+      <li>Airbnb for unique neighborhood experiences</li>
+      <li>Book in advance during peak tourist season</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
