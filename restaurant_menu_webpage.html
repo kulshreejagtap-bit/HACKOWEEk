@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Restaurant Menu</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+
+        /* Background Image */
+        background-image: url("https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .menu {
+        max-width: 1200px;  /* smaller width so grid wraps naturally */
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+
+    .tagline {
+        text-align: center;
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin: 30px 0 15px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 6px;
+    }
+
+    /* GRID FOR MENU ITEMS */
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* wraps automatically */
+        gap: 15px;
+        justify-items: center; /* centers items in grid cell */
+    }
+
+    .menu-item {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        width: 100%;
+        max-width: 180px; /* ensures items don’t stretch */
+    }
+
+    .menu-item:hover {
+        transform: scale(1.03);
+    }
+
+    /* IMAGE */
+    .menu-item .img-container {
+        width: 100%;
+        height: 120px; /* smaller height to fit more items */
+        overflow: hidden;
+    }
+
+    .menu-item .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* maintains aspect ratio, focuses on center */
+        object-position: center;
+    }
+
+    .content {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .item-name {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .description {
+        font-size: 12px;
+        color: #555;
+        margin: 4px 0;
+    }
+
+    .price {
+        font-size: 14px;
+        font-weight: bold;
+        color: #222;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+    <h1>Saffron & Sage</h1>
+    <div class="tagline">Fresh • Flavorful • Handmade</div>
+
+    <!-- STARTERS -->
+    <h2>Starters</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://t4.ftcdn.net/jpg/03/19/22/35/360_F_319223572_ILWIWBuhaeyTzGPLQ0rJCVtBSGOqw864.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Garlic Bread</div>
+                <div class="description">Buttery toasted bread</div>
+                <div class="price">₹200</div>
+            </div>
+        </div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://media.istockphoto.com/id/1464174156/photo/close-up-image-of-homemade-loaded-nachos-covered-in-melted-mozzarella-cheese-cherry-tomatoes.jpg?s=612x612&w=0&k=20&c=KW8bJYshOmE9IdJpCY_GXdpdTRHu0I2xdGNZR_-XUsk=">
+    </div>
+    <div class="content">
+        <div class="item-name">Nachos</div>
+        <div class="description">Cheese-Loaded Nachos</div>
+        <div class="price">₹280</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHULEEhpy7Sa4k49mNeYcVSio7Y-2kmF1pvA&s">
+    </div>
+    <div class="content">
+        <div class="item-name">Dumplings</div>
+        <div class="description">Spicy Dumplings</div>
+        <div class="price">₹260</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmFHx6AmeSBSc-IbVxNWNFPxn9JBhwfYvIWA&s">
+    </div>
+    <div class="content">
+        <div class="item-name">Tomato Soup</div>
+        <div class="description">Fresh Tomato Soup</div>
+        <div class="price">₹180</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://st4.depositphotos.com/19960896/23603/i/450/depositphotos_236039386-stock-photo-szechuan-chicken-which-popular-indo.jpg">
+    </div>
+    <div class="content">
+        <div class="item-name">Chicken Lollipop</div>
+        <div class="description">Signature Chicken Lollipop</div>
+        <div class="price">₹320</div>
+    </div>
+</div>
+
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://media.istockphoto.com/id/1443993866/photo/french-fries-with-ketchup-and-cocktail-sauce.jpg?s=612x612&w=0&k=20&c=URpOsc5tds8tOfxK4ZO3Tkx6mwLho7fL_pTBSNdziBU=">
+            </div>
+            <div class="content">
+                <div class="item-name">French Fries</div>
+                <div class="description">Crispy golden fries</div>
+                <div class="price">₹150</div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://d1mxd7n691o8sz.cloudfront.net/static/recipe/recipe/2023-12/Vegetable-Spring-Rolls-2-1-906001560ca545c8bc72baf473f230b4.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Spring Rolls</div>
+                <div class="description">Vegetable filled rolls</div>
+                <div class="price">₹220</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN COURSE -->
+    <h2>Main Course</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://media.istockphoto.com/id/1352277867/photo/tobacco-whole-chicken-on-plate-with-herbs-and-tomato-black-background-top-view.jpg?s=612x612&w=0&k=20&c=dhyD7P4NBgxrUjflvvDTfJxvN45UYAI1m0gLOz8bPjE=">
+            </div>
+            <div class="content">
+                <div class="item-name">Grilled Chicken</div>
+                <div class="description">Served with rice & veggies</div>
+                <div class="price">₹499 per half portion</div>
+            </div>
+        </div>
+
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xvmq4lDWwEh5SjaJANfP7BwLelnLRkGtvg&s">
+    </div>
+    <div class="content">
+        <div class="item-name">Palak Paneer</div>
+        <div class="description">Creamy spinach curry</div>
+        <div class="price">₹330</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://png.pngtree.com/background/20250103/original/pngtree-highly-detailed-veg-biryani-or-pulav-fried-rice-picture-image_15767365.jpg">
+    </div>
+    <div class="content">
+        <div class="item-name">Veg Biryani</div>
+        <div class="description">Aromatic spiced rice</div>
+        <div class="price">₹280</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://thumbs.dreamstime.com/b/malai-kofta-indian-vegetarian-meatballs-curry-traditionally-served-hot-flatbread-tandoori-rumali-roti-naan-traditional-158606665.jpg">
+    </div>
+    <div class="content">
+        <div class="item-name">Malai Kofta</div>
+        <div class="description">Creamy cottage dumplings</div>
+        <div class="price">₹350</div>
+    </div>
+</div>
+
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://thumbs.dreamstime.com/b/mutton-curry-28836468.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Mutton Curry</div>
+                <div class="description">Spicy tender mutton</div>
+                <div class="price">₹450</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://t4.ftcdn.net/jpg/17/15/16/93/360_F_1715169355_cAjyCT1V26tJbHqmlqqXT8rKNgRvFiHk.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Butter Naan</div>
+                <div class="description">Buttery soft bread</div>
+                <div class="price">₹60</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://i.pinimg.com/736x/c1/1c/a0/c11ca08db94632ea3cf0b1f7f8147cb4.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Masala Dosa</div>
+                <div class="description">Crispy spiced crepe</div>
+                <div class="price">₹180</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <h2>Desserts</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://www.fnp.com/images/pr/m/v20250520025928/chocolate-truffle-cream-cake-half-kg-eggless.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Chocolate Cake</div>
+                <div class="description">Rich & moist</div>
+                <div class="price">₹249</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/RX_THUMBNAIL/IMAGES/VENDOR/2024/8/15/bb1d10b8-e4fc-45bf-ada8-9e700e929567_942353.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Ice Cream</div>
+                <div class="description">Vanilla, Chocolate, Strawberry</div>
+                <div class="price">₹129(1scoop)</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuY2FrZXN8ZW58MHx8MHx8fDA%3D">
+            </div>
+            <div class="content">
+                <div class="item-name">Pancakes</div>
+                <div class="description">Honey & maple syrup</div>
+                <div class="price">₹249</div>
+            </div>
+        </div>
+
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://media.istockphoto.com/id/450752471/photo/homemade-organic-apple-pie-dessert.jpg?s=612x612&w=0&k=20&c=6mwKTunGfRKFWyB_VUOGqXzcUMtBSCvg6JAQ3At2aWE=">
+    </div>
+    <div class="content">
+        <div class="item-name">Apple Pie</div>
+        <div class="description">Warm cinnamon apples</div>
+        <div class="price">₹299</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://saratogaoliveoil.com/cdn/shop/articles/EspressoTiramisu-300x250-1.jpg?v=1663185667">
+    </div>
+    <div class="content">
+        <div class="item-name">Tiramisu</div>
+        <div class="description">Coffee-cream delight</div>
+        <div class="price">₹349</div>
+    </div>
+</div>
+
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://vaya.in/recipes/wp-content/uploads/2018/12/Blueberry-Cheesecake..jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Cheesecake</div>
+                <div class="description">Creamy & smooth</div>
+                <div class="price">₹349</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DRINKS -->
+    <h2>Drinks</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://static.betterretailing.com/wp-content/uploads/2022/08/11104217/Hot-drinks-coffee-tea-hot-chocolate-mugs-cups-beverages.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Hot Beverages</div>
+                <div class="description">Espresso,Latte,Green tea,Americano...</div>
+                <div class="price">₹60 – ₹180</div>
+            </div>
+        </div>
+      
+
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://www.kimecopak.ca/cdn/shop/articles/Mocktails.png?v=1717682378&width=1100">
+    </div>
+    <div class="content">
+        <div class="item-name">Mocktails(Non-alcoholic)</div>
+        <div class="description">Virgin Mojito,Fresh lime soda,Fuit coller...</div>
+        <div class="price">₹120 – ₹400</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://blog.hellofresh.com/wp-content/uploads/2017/12/HF171121_Extrashot_421_US_Holiday_Cocktail_Mocktail_Hero_Shot_-59_low.jpg">
+    </div>
+    <div class="content">
+        <div class="item-name">Cocktails</div>
+        <div class="description">Mojito,Margarita...</div>
+        <div class="price">₹250 – ₹900</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://i0.wp.com/allaboutbeer.com/wp-content/uploads/2015/05/america-local-breweries.jpg?ssl=1">
+    </div>
+    <div class="content">
+        <div class="item-name">Beers</div>
+        <div class="description">Wheat beer, craft beer...</div>
+        <div class="price">₹180 – ₹600</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="img-container">
+        <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/7909/conversions/b8a1309a-ba53-48c7-bca3-9c36aab2338a-thumb.jpg">
+    </div>
+    <div class="content">
+        <div class="item-name">Water</div>
+        <div class="description">Sparkling water,Mineral water...</div>
+        <div class="price">₹20 – ₹120</div>
+    </div>
+</div>
+
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://t4.ftcdn.net/jpg/01/39/46/07/360_F_139460703_68ql2mESojJSBBLq9aM8NnCR6En2QLaM.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Fresh Juices</div>
+                <div class="description">Orange, Apple, Mango...</div>
+                <div class="price">₹80 – ₹300</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="img-container">
+                <img src="https://www.biggerbolderbaking.com/wp-content/uploads/2015/05/BBB71-Homemade-Ice-Cream-Milkshakes-Thumbnail-v.1.jpg">
+            </div>
+            <div class="content">
+                <div class="item-name">Milkshakes</div>
+                <div class="description">Chocolate & Strawberry</div>
+                <div class="price">₹120 – ₹350</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
